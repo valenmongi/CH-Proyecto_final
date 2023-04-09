@@ -1,0 +1,20 @@
+{% extends "APP/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo %}
+    <h1>Bienvenidos a PROFES!</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+<h1> Hola PROFES</h1>
+
+<forM action="" method="post">
+    {{% csrf_token %}}
+    {{ form }}
+    <input type="submit" value="Agregar">
+</form>
+
+{% endblock %}
