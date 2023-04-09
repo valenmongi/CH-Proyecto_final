@@ -11,9 +11,10 @@ def publications(request):
         if form.is_valid():
             publ = Publications()
             publ.user_name = form.cleaned_data['user_name']
-            publ.date_publication = form.cleaned_data['data_publication']
+            publ.date_publication = form.cleaned_data['date_publication']
             publ.publication = form.cleaned_data['publication']
             publ.price_publication = form.cleaned_data['price_publication']
+            publ.publication_sell = form.cleaned_data['publication_sell']
             publ.save()
             form = PublicationsForm()
         else:

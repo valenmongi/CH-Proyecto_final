@@ -21,7 +21,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href="{% url 'inicioApp' %}">51325</a>
+                <a class="navbar-brand" href="{% url 'inicioApp' %}">Computer Retailer</a>
                 <a class="btn btn-primary" href="{% url 'publications' %}">PUBLICATIONS</a>
             </div>
         </nav>
@@ -41,8 +41,10 @@
                 </div>
             </div>
         </header>
+        <div class="container">
         {% block contenido_que_cambia %}
         {% endblock %}
+        </div>
         <section class="features-icons bg-light text-center">
             <div class="container">
                 <div class="row">
