@@ -1,0 +1,25 @@
+{% extends "APP/layout.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Computer Retailer</h1>
+    <div class="row">
+        <div class="col-md-4 d-flex align-items-stretch">
+            <div class="card">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title text-center">Users</h5>
+                    <div class="d-flex justify-content-center mb-3">
+                        <i class="fas fa-users fa-3x"></i>
+                    </div>
+                    <p class="card-text">Check and add new users in the platform</p>
+                    <a href="{% url 'publications' %}" class="btn btn-primary mt-auto">View Players</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

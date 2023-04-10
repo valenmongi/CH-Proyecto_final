@@ -1,6 +1,6 @@
 from django import forms
 
-class ClientsForm(forms.Form):
+class UsersForm(forms.Form):
     user_name = forms.EmailField()
     password = forms.CharField(max_length=10)
     name = forms.CharField(max_length=10)

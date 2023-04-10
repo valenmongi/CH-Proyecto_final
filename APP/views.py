@@ -2,12 +2,18 @@ from django.shortcuts import render
 from .models import *
 from .forms import *
 from django.http import HttpResponse
+from django.db.models import Q
 # Create your views here.
+
+def index(request):
+    params = {}
+
+    return render(request,'APP/index.html',params)
 
 
 def publications(request):
     if request.method == 'POST':
-        form = PublicationsForm(request.POST)
+        form = PublicationsForm(request.POST) 
         if form.is_valid():
             publ = Publications()
             publ.user_name = form.cleaned_data['user_name']
@@ -26,8 +32,25 @@ def publications(request):
     context = {"publications":publications, "form":form}
     return render(request, 'APP/publications.html', context)
 
-def inicio(request):
-    return HttpResponse("Bienvenido a la pagina principal")
 
-def inicioApp(request):
-    return render(request, "APP/inicio.html")
+
+def users(request):
+    if request.method == 'POST':
+        form = UsersForm(request.POST) 
+        if form.is_valid():
+            user = Users()
+            user.user_name = form.cleaned_data['user_name']
+            user.password = form.cleaned_data['password']
+            user.name = form.cleaned_data['name']
+            user.surname = form.cleaned_data['surname']
+            user.save()
+            form = UsersForm()
+        else:
+            pass
+    else:
+        form = UsersForm()
+    
+    user = Users.objects.all()
+    context = {"users":user, "form":form}
+    return render(request, 'APP/users.html', context)
+

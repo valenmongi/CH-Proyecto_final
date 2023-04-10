@@ -27,23 +27,19 @@
         <thead>
             <tr>
                 <th class="w-10 text-center" scope="col">User Name</th>
-                <th class="w-10 text-center" scope="col">Publication</th>
-                <th class="w-10 text-center" scope="col">Price</th>
-                <th class="w-10 text-center" scope="col">Date Publication</th>
-                <th class="w-10 text-center" scope="col">Is sell?</th>
+                <th class="w-10 text-center" scope="col">Name</th>
+                <th class="w-10 text-center" scope="col">Surname</th>
             </tr>
         
         </thead>
 
         <tbody>
 
-            {% for publication in publications %}
+            {% for client in users %}
             <tr>
-                <td class="w-10 text-center">{{ publication.user_name }}</td>
-                <td class="w-10 text-center">{{ publication.publication }}</td>
-                <td class="w-10 text-center">{{ publication.price_publication }}</td>
-                <td class="w-10 text-center">{{ publication.date_publication }}</td>
-                <td class="w-10 text-center">{{ publication.publication_sell }}</td>
+                <td class="w-10 text-center">{{ client.user_name }}</td>
+                <td class="w-10 text-center">{{ client.name }}</td>
+                <td class="w-10 text-center">{{ client.surname }}</td>
             </tr>
             {% endfor %}
 
@@ -52,7 +48,7 @@
     </table>
 
     <tr>
-        <a class="btn btn-primary w-100" href="{% url 'publications' %}">RESET</a>
+        <a class="btn btn-primary w-100" href="{% url 'users' %}">RESET</a>
     </tr>
 
 </div>
