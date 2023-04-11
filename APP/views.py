@@ -54,3 +54,24 @@ def users(request):
     context = {"users":user, "form":form}
     return render(request, 'APP/users.html', context)
 
+
+def purchases(request):
+    if request.method == 'POST':
+        form = PurchasesForm(request.POST) 
+        if form.is_valid():
+            purch = Purchases()
+            purch.user_name = form.cleaned_data['user_name']
+            purch.date_purchase = form.cleaned_data['date_purchase']
+            purch.purchase = form.cleaned_data['purchase']
+            purch.price_purchase = form.cleaned_data['price_purchase']
+            purch.save()
+            form = PurchasesForm()
+        else:
+            pass
+    else:
+        form = PurchasesForm()
+    
+    purchases = Purchases.objects.all()
+    context = {"purchases":purchases, "form":form}
+    return render(request, 'APP/purchase.html', context)
+
