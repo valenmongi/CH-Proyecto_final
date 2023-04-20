@@ -2,7 +2,6 @@
 
 ##### Valentín Nicolás Mongi - DNI 38409972
 
-Acceder a /APP para ingresar al home de la aplicación
 
 ## Home
 
