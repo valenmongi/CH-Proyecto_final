@@ -20,6 +20,8 @@ from APP.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path("", inicio),
+    path("", index, name='index'),
     path("APP/", include("APP.urls")),
 ]
+
+

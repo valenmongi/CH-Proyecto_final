@@ -18,7 +18,9 @@ Contiene un formulario para ingresar un nuevo usuario y una tabla para verificar
 
 ### Publications
 
-Contiene un formulario para ingresar un nueva publicación en la futura app de ventas y compras, y una tabla para verificar las publicaciones cargadas.
+- Contiene un formulario para ingresar un nueva publicación en la futura app de ventas y compras, y una tabla para verificar las publicaciones cargadas.
+
+- Contiene un formulario para búsqueda de publicaciones ingresadas.
 
 ### Purchases
 

@@ -32,6 +32,42 @@ def publications(request):
     context = {"publications":publications, "form":form}
     return render(request, 'APP/publications.html', context)
 
+def publications_view(request):
+    params = {}
+
+    if request.method == 'POST':
+
+        form = PublicationsForm(request.POST)
+
+        _user_name = request.POST['user_name']
+        _date_publication = request.POST['date_publication']
+        _publication = request.POST['publication']
+        _price = request.POST['price_publication']
+        _is_sell = request.POST['publication_sell'] 
+
+
+        params['publications_search'] = Publications.objects.filter(
+            user_name__icontains = _user_name,
+            date_publication__icontains = _date_publication,
+            publication__icontains = _publication,
+            price_publication__icontains = _price,
+            publication_sell__icontains = _is_sell,
+
+        )
+
+        params['form'] = form
+
+        return render(request,'APP/publications_search.html',params)
+    
+    else:
+        
+        form = PublicationsForm()
+        
+        params['publications_search'] = Publications.objects.all()
+        params['form'] = form
+
+    return render(request,'APP/publications_search.html',params)
+
 
 
 def users(request):
